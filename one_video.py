@@ -1,3 +1,7 @@
+import sys
 from pytube import YouTube
-youtube_link = 'https://youtu.be/Ufv7MNSBBVw'
-YouTube(youtube_link).streams.get_highest_resolution().download('./download')
+youtube_link = sys.argv[1]
+directory = sys.argv[2]
+print("Iniciando...")
+YouTube(youtube_link).streams.get_highest_resolution().download(directory)
+print("Finalizado!")
